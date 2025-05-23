@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: store
+  datasource:
+    url: jdbc:postgresql://localhost:5432/store
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver   
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+    livereload:
+      enabled: true
+
+server:
+  port: 3000
+
+app:
+  myname: yash

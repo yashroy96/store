@@ -1,15 +1,19 @@
-package com.codewithyash.store.models;
+package com.codewithyash.store.entities;
+
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "profiles")
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Getter
 @Setter
+@Entity
+@Table(name = "profiles")
 public class Profile {
-
     @Id
     @Column(name = "id")
     private Long id;
@@ -25,4 +29,9 @@ public class Profile {
 
     @Column(name = "loyalty_points")
     private Integer loyaltyPoints;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id")
+    @MapsId
+    private User user;
 }

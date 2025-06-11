@@ -1,10 +1,9 @@
 package com.codewithyash.store;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 //@RestController
 //@RequestMapping("/yash")
@@ -25,10 +24,12 @@ import org.springframework.web.bind.annotation.RestController;
 //}
 
 @Controller
-//@RequestMapping("/yash")
+@RequestMapping("/yash")
 public class YashController {
-    @RequestMapping("/yash")
+
+    @GetMapping("/roy")
     public String index(){
-        return "index.html";
+        System.out.println("DEBUG: /yash/roy endpoint hit");
+        return "redirect:/index.html";
     }
 }
